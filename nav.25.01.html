@@ -610,11 +610,25 @@ var x = setInterval(function() {
         document.getElementById("demo").innerHTML = "🎄 ¡FELIZ NAVIDAD! 🎄";
     }
 }, 1000);
+
+	// Leer nombres encriptados de la URL
+window.onload = function() {
+    const params = new URLSearchParams(window.location.search);
+    const datos = params.get('d');
+    
+    if(datos) {
+        const decoded = atob(datos).split('|');
+        document.getElementById('username').textContent = decoded[0].toUpperCase();
+        document.getElementById('usernameb').textContent = decoded[1].toUpperCase();
+    }
+};
+	
 </script>
 
 </body>
 
 </html>
+
 
 
 
